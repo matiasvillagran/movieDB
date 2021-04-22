@@ -17,6 +17,7 @@ struct MovieListView: View {
                 TabView{
                     List(model.popularMovies) { movie in
                         NavigationLink(
+                            //TODO: maybe this is not the right way, to do this
                             destination: MovieDetailView(movie: movie),
                             label: {
                                 VStack {
@@ -38,7 +39,29 @@ struct MovieListView: View {
                             Image(systemName: "appletv.fill")
                             Text("Most Popular")
                             
-                        }                    
+                        }
+                    List(model.topRateMovies) { movie in
+                        NavigationLink(
+                            destination: MovieDetailView(movie: movie),
+                            label: {
+                                VStack {
+                                    ZStack {
+                                        KFImage(URL(string: "https://image.tmdb.org/t/p/w500\(movie.poster_path)")!).resizable()
+                                            .aspectRatio(16/15, contentMode: .fill)
+                                            .cornerRadius(8)
+
+                                    }
+                                    Text(movie.original_title)
+                                        .font(.headline).bold()
+                                    Spacer()
+                                }
+                            })
+                    }
+                    .tabItem {
+                        Image(systemName: "applelogo")
+                        Text("Top Rated")
+                        
+                    }
                 }
                 .animation(.easeIn(duration: 0.1))
                 .navigationBarTitle("Movies", displayMode: .inline)
