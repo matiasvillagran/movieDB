@@ -16,7 +16,9 @@ struct MovieListView: View {
             NavigationView{
                 TabView{
                     List(model.popularMovies) { movie in
-        
+                        NavigationLink(
+                            destination: MovieDetailView(movie: movie),
+                            label: {
                                 VStack {
                                     ZStack {
                                         KFImage.url(URL(string: "https://image.tmdb.org/t/p/w500\(movie.poster_path)")!).resizable()
@@ -30,6 +32,7 @@ struct MovieListView: View {
                                         .font(.headline).bold()
                                     Spacer()
                                 }
+                            })
                     }
                         .tabItem {
                             Image(systemName: "appletv.fill")
