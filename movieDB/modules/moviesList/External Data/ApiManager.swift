@@ -6,8 +6,13 @@
 //
 
 import Foundation
+protocol DataProtocol {
+    func fetchPopularMovies(completion: @escaping([Movie]) -> ())
+    func fetchTopRateMovies(completion: @escaping([Movie]) -> ())
+}
 
-class ApiManager {
+class ApiManager: DataProtocol {
+    
     func fetchPopularMovies(completion: @escaping([Movie]) -> ()) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=34738023d27013e6d1b995443764da44") else {return}
         URLSession.shared.dataTask(with: url) { data, success, error in
@@ -27,5 +32,9 @@ class ApiManager {
                 }
             }
         } .resume()
+    }
+    
+    func fetchTopRateMovies(completion: @escaping ([Movie]) -> ()) {
+        
     }
 }

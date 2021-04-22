@@ -8,8 +8,10 @@
 import Combine
 
 class MovieListViewModel: ObservableObject {
+    var data: DataProtocol
     
-    init() {
+    init(data: DataProtocol) {
+        self.data = data
         fetchPopularMovies()
     }
     
@@ -22,7 +24,7 @@ class MovieListViewModel: ObservableObject {
     let didChange = PassthroughSubject<MovieListViewModel, Never>()
     
     func fetchPopularMovies() {
-        ApiManager().fetchPopularMovies { (movie) in
+        data.fetchPopularMovies { (movie) in
             self.popularMovies = movie
         }
     }
