@@ -13,9 +13,16 @@ class MovieListViewModel: ObservableObject {
     init(data: DataMovieProtocol) {
         self.data = data
         fetchPopularMovies()
+        fetchTopRateMovies()
     }
     
     @Published var popularMovies = [Movie]() {
+        didSet {
+            didChange.send(self)
+        }
+    }
+    
+    @Published var topRateMovies = [Movie]() {
         didSet {
             didChange.send(self)
         }
@@ -26,6 +33,12 @@ class MovieListViewModel: ObservableObject {
     func fetchPopularMovies() {
         data.fetchPopularMovies { (movie) in
             self.popularMovies = movie
+        }
+    }
+    
+    func fetchTopRateMovies() {
+        data.fetchTopRateMovies { (movie) in
+            self.topRateMovies = movie
         }
     }
     

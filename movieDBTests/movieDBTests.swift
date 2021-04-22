@@ -26,9 +26,18 @@ class movieDBTests: XCTestCase {
        //prep
         dummyData.movie = [Movie(id: 1, adult: true, original_title: "dummy", poster_path: "dummy", overview: "dummy", vote_average: 7.0), Movie(id: 2, adult: true, original_title: "dummy", poster_path: "dummy", overview: "dummy", vote_average: 1.0)]
         //action
-        modelListViewModel.fetchPopularMovies()
+        modelListViewModel = MovieListViewModel(data: dummyData)
         //assert
         XCTAssertEqual(modelListViewModel.popularMovies.count, 2)
+    }
+    
+    func testWhenExternalDataGiveUsTwoObjectsThenTopRateMoviesMustBeTwo() {
+       //prep
+        dummyData.movie = [Movie(id: 1, adult: true, original_title: "dummy", poster_path: "dummy", overview: "dummy", vote_average: 7.0), Movie(id: 2, adult: true, original_title: "dummy", poster_path: "dummy", overview: "dummy", vote_average: 1.0)]
+        //action
+        modelListViewModel = MovieListViewModel(data: dummyData)
+        //assert
+        XCTAssertEqual(modelListViewModel.topRateMovies.count, 2)
     }
 
 }
