@@ -8,9 +8,9 @@
 import Combine
 
 class MovieListViewModel: ObservableObject {
-    var data: DataProtocol
+    var data: DataMovieProtocol
     
-    init(data: DataProtocol) {
+    init(data: DataMovieProtocol) {
         self.data = data
         fetchPopularMovies()
     }

@@ -16,6 +16,7 @@
 		60BEF0462632001B004DD1E1 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEF0452632001B004DD1E1 /* MovieData.swift */; };
 		60BEF04F26320240004DD1E1 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEF04E26320240004DD1E1 /* ApiManager.swift */; };
 		60BEF054263204E0004DD1E1 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEF053263204E0004DD1E1 /* MovieListViewModel.swift */; };
+		60BEF0A4263211A2004DD1E1 /* ApiMovieStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BEF0A3263211A2004DD1E1 /* ApiMovieStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		60BEF0452632001B004DD1E1 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		60BEF04E26320240004DD1E1 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		60BEF053263204E0004DD1E1 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		60BEF0A3263211A2004DD1E1 /* ApiMovieStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMovieStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				60BEF0212631D7CD004DD1E1 /* movieDBTests.swift */,
 				60BEF0232631D7CD004DD1E1 /* Info.plist */,
+				60BEF0A3263211A2004DD1E1 /* ApiMovieStub.swift */,
 			);
 			path = movieDBTests;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60BEF0222631D7CD004DD1E1 /* movieDBTests.swift in Sources */,
+				60BEF0A4263211A2004DD1E1 /* ApiMovieStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
