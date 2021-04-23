@@ -25,6 +25,7 @@ struct MovieDetailView: View {
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             Text(movie.original_title)
                 .font(.headline).bold()
+            Text("Score: " + movie.scoreText + " " + movie.ratingText)
             Text(movie.overview)
             
         }

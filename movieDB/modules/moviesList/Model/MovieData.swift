@@ -20,4 +20,17 @@ struct Movie : Codable, Identifiable, Hashable {
     let poster_path: String
     let overview: String
     let vote_average: Double
+    
+    var ratingText: String {
+        let rating = Int(vote_average)
+        let ratingText = (0..<rating).reduce("") {(acc, _)  -> String in
+            return acc + "⭐️"
+        }
+        return ratingText
+    }
+
+    var scoreText: String {
+        return "\(ratingText.count)/10"
+    }
 }
+
